@@ -1,7 +1,6 @@
 package scheduler
 
 import (
-	"encoding/json"
 	"sync"
 	"time"
 )
@@ -77,16 +76,6 @@ func (s *Schedule) Dispatch() error {
 		UpdateTime(s)
 	}
 	return nil
-}
-
-//Serialize to json
-func (s *Schedule) Serialize() string {
-	r, err := json.Marshal(s)
-	if err != nil {
-		return "{}"
-	}
-
-	return string(r)
 }
 
 //Start starts Schedule
